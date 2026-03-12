@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michele Medeiros Modas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: #fff;
+      color: #2a1a1a;
+    }
+
+    /* ── Navegação ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      border-bottom: 0.5px solid #e8d5e0;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      letter-spacing: 0.04em;
+      color: #8b4a6b;
+    }
+
+    .logo span { font-style: italic; color: #b07aa0; }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6b4a5a;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #c47da0; }
+
+    .nav-icons {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #8b4a6b;
+      padding: 4px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      background: linear-gradient(135deg, #fdf0f5 0%, #f5e6f0 50%, #ede0f2 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 50px;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #b07aa0;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px;
+      line-height: 1.15;
+      color: #4a1a35;
+      margin-bottom: 20px;
+    }
+
+    .hero-title em { font-style: italic; color: #8b4a6b; }
+
+    .hero-sub {
+      font-size: 15px;
+      color: #7a5568;
+      line-height: 1.7;
+      max-width: 340px;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #8b4a6b;
+      color: #fff;
+      padding: 14px 32px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover { background: #6e3555; }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: #8b4a6b;
+      padding: 13px 30px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid #c4a0b8;
+      cursor: pointer;
+      margin-left: 12px;
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+
+    .btn-outline:hover { background: #fdf0f5; }
+
+    .hero-image {
+      background: linear-gradient(160deg, #e8c8d8 0%, #d4a8c4 40%, #c490ae 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-decor {
+      position: absolute;
+      width: 340px;
+      height: 460px;
+      border-radius: 50% 50% 45% 45%;
+      background: rgba(255,255,255,0.18);
+    }
+
+    .hero-figure {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-mannequin {
+      font-size: 120px;
+      line-height: 1;
+      filter: saturate(0) brightness(1.4);
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      background: rgba(255,255,255,0.88);
+      padding: 12px 18px;
+      font-size: 12px;
+      color: #6b3a55;
+      letter-spacing: 0.06em;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    /* ── Seções ── */
+    .section { padding: 60px 40px; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #4a1a35;
+      margin-bottom: 8px;
+    }
+
+    .section-line {
+      width: 50px;
+      height: 1px;
+      background: #c47da0;
+      margin: 12px auto 0;
+    }
+
+    /* ── Categorias ── */
+    .cats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .cat {
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .cat-img {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      transition: transform 0.3s;
+    }
+
+    .cat:hover .cat-img { transform: scale(1.03); }
+
+    .cat-1 .cat-img { background: linear-gradient(145deg, #f7e0ea, #e8c4d4); }
+    .cat-2 .cat-img { background: linear-gradient(145deg, #ece0f5, #d8c0e8); }
+    .cat-3 .cat-img { background: linear-gradient(145deg, #f0e8f8, #dcc8ec); }
+    .cat-4 .cat-img { background: linear-gradient(145deg, #fce8f0, #ecc4d8); }
+
+    .cat-label {
+      padding: 12px 0 4px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #5a2a42;
+      text-align: center;
+    }
+
+    .cat-sub {
+      font-size: 12px;
+      color: #a07a90;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    /* ── Produtos ── */
+    .products-bg { background: #fdf7fa; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product {
+      background: #fff;
+      border: 0.5px solid #edd8e8;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.25s;
+    }
+
+    .product:hover { box-shadow: 0 8px 28px rgba(140,70,110,0.12); }
+
+    .product-img {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      position: relative;
+    }
+
+    .prod-1 .product-img { background: linear-gradient(160deg, #fce8f4, #e8c8dc); }
+    .prod-2 .product-img { background: linear-gradient(160deg, #ede0f8, #d8c0ec); }
+    .prod-3 .product-img { background: linear-gradient(160deg, #f8e0ec, #e4c0d4); }
+
+    .product-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: #8b4a6b;
+      color: #fff;
+      font-size: 10px;
+      padding: 4px 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .product-info { padding: 16px 18px 18px; }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: #3a1228;
+      margin-bottom: 4px;
+    }
+
+    .product-desc {
+      font-size: 12px;
+      color: #9a7888;
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 500;
+      color: #7a3458;
+    }
+
+    .price-old {
+      font-size: 12px;
+      color: #b090a0;
+      text-decoration: line-through;
+      margin-left: 6px;
+    }
+
+    .add-btn {
+      background: none;
+      border: 1px solid #c47da0;
+      color: #8b4a6b;
+      padding: 7px 16px;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      letter-spacing: 0.06em;
+      transition: all 0.2s;
+    }
+
+    .add-btn:hover { background: #8b4a6b; color: #fff; }
+
+    /* ── Banner Promo ── */
+    .banner {
+      background: linear-gradient(135deg, #6e3060 0%, #9b4a80 50%, #c070a4 100%);
+      padding: 50px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    .banner-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .banner-text p {
+      font-size: 15px;
+      opacity: 0.85;
+      font-weight: 300;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: #7a3458;
+      padding: 14px 34px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      flex-shrink: 0;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-white:hover { background: #fde8f2; }
+
+    /* ── Footer ── */
+    footer {
+      background: #2a0e1e;
+      color: #d4a8c0;
+      padding: 40px 40px 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #f0d0e0;
+      margin-bottom: 12px;
+    }
+
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #a07888;
+      font-weight: 300;
+      max-width: 260px;
+    }
+
+    .footer-title {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c090a8;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .footer-links { list-style: none; }
+
+    .footer-links li {
+      font-size: 13px;
+      color: #906878;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .footer-links li:hover { color: #f0d0e0; }
+
+    .footer-bottom {
+      border-top: 0.5px solid #4a2a3a;
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy { font-size: 12px; color: #6a4858; }
+
+    .social { display: flex; gap: 14px; }
+
+    .social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 0.5px solid #4a2a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .social-btn:hover { border-color: #c47da0; }
+
+    /* ── Responsivo ── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-image { min-height: 240px; }
+      .hero-text { padding: 40px 24px; }
+      .hero-title { font-size: 32px; }
+      .section { padding: 40px 20px; }
+      .cats { grid-template-columns: repeat(2, 1fr); }
+      .products { grid-template-columns: 1fr; }
+      .banner { flex-direction: column; gap: 24px; text-align: center; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; }
+    }
+
+
+    .search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e8d5e0;
+  border-radius: 20px;
+  padding: 4px 12px;
+  gap: 6px;
+  overflow: hidden;
+  width: 36px;
+  transition: width 0.35s ease;
+}
+
+.search-box.aberta { width: 220px; }
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: #4a1a35;
+  background: transparent;
+  width: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.search-box.aberta input {
+  width: 160px;
+  opacity: 1;
+}
+
+.sem-resultado {
+  display: none;
+  text-align: center;
+  padding: 40px;
+  color: #a07888;
+  font-size: 15px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  grid-column: 1 / -1;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navegação -->
+  <nav>
+    <div class="logo">Michele <span>Medeiros</span> Modas</div>
+    <ul class="nav-links">
+      <li><a href="#">Novidades</a></li>
+      <li><a href="#">Coleções</a></li>
+      <li><a href="#">Promoções</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+    <div class="nav-icons">
+  <div class="search-box" id="searchBox">
+    <button class="icon-btn" onclick="toggleBusca()">🔍</button>
+    <input type="text" id="searchInput" placeholder="Buscar produtos..." onkeyup="buscar()" />
+  </div>
+  <button class="icon-btn">♡</button>
+  <button class="icon-btn">🛍</button>
+</div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-tag">Nova coleção · Outono 2025</p>
+      <h1 class="hero-title">Elegância <em>que</em><br>te define</h1>
+      <p class="hero-sub">Peças cuidadosamente selecionadas para mulheres que valorizam estilo, conforto e feminilidade em cada detalhe.</p>
+      <div>
+        <a href="#" class="btn-primary">Ver coleção</a>
+        <a href="#" class="btn-outline">Promoções</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-decor"></div>
+      <div class="hero-figure">
+        <div class="hero-mannequin">👗</div>
+      </div>
+      <div class="hero-badge">Frete grátis acima de R$ 199</div>
+    </div>
+  </section>
+
+  <!-- Categorias -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Explore por categoria</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="cats">
+      <div class="cat cat-1">
+        <div class="cat-img">👗</div>
+        <p class="cat-label">Vestidos</p>
+        <p class="cat-sub">48 peças</p>
+      </div>
+      <div class="cat cat-2">
+        <div class="cat-img">👚</div>
+        <p class="cat-label">Blusas</p>
+        <p class="cat-sub">64 peças</p>
+      </div>
+      <div class="cat cat-3">
+        <div class="cat-img">👖</div>
+        <p class="cat-label">Calças</p>
+        <p class="cat-sub">32 peças</p>
+      </div>
+      <div class="cat cat-4">
+        <div class="cat-img">💍</div>
+        <p class="cat-label">Acessórios</p>
+        <p class="cat-sub">28 peças</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos em destaque -->
+  <section class="section products-bg">
+    <div class="section-header">
+      <h2 class="section-title">Mais amados da semana</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="products">
+      <div class="product prod-1">
+        <div class="product-img">
+          <span class="product-tag">Novidade</span>
+          👗
+        </div>
+        <div class="product-info">
+          <p class="product-name">Vestido Midi Floral</p>
+          <p class="product-desc">Tecido leve · Estampa exclusiva</p>
+          <div class="product-footer">
+            <div><span class="price">R$ 189</span><span class="price-old">R$ 240</span></div>
+            <button class="add-btn">+ Sacola</button>
+          </div>
+        </div>
+      </div>
+      <div class="product prod-2">
+        <div class="product-img">
+          <span class="product-tag">Mais vendido</span>
+          👚
+        </div>
+        <div class="product-info">
+          <p class="product-name">Blusa Romântica</p>
+          <p class="product-desc">Rendas delicadas · Cor lilás</p>
+          <div class="product-footer">
+            <div><span class="price">R$ 129</span></div>
+            <button class="add-btn">+ Sacola</button>
+          </div>
+        </div>
+      </div>
+      <div class="product prod-3">
+        <div class="product-img">
+          👘
+        </div>
+        <div class="product-info">
+          <p class="product-name">Conjunto Chanel</p>
+          <p class="product-desc">Saia + blazer · Tom rosê</p>
+          <div class="product-footer">
+            <div><span class="price">R$ 299</span><span class="price-old">R$ 380</span></div>
+            <button class="add-btn">+ Sacola</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="sem-resultado" id="semResultado">Nenhum produto encontrado 🌸</p>
+  </section>
+
+  <!-- Banner Promoção -->
+  <section class="banner">
+    <div class="banner-text">
+      <h2>Sale · Até 50% off</h2>
+      <p>Peças selecionadas com desconto especial. Por tempo limitado.</p>
+    </div>
+    <a href="#" class="btn-white">Ver promoções →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Michele Medeiros Modas</p>
+        <p class="footer-desc">Moda feminina com personalidade. Roupas que combinam com você em todos os momentos.</p>
+      </div>
+      <div>
+        <p class="footer-title">Loja</p>
+        <ul class="footer-links">
+          <li>Novidades</li>
+          <li>Coleções</li>
+          <li>Promoções</li>
+          <li>Lookbook</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Atendimento</p>
+        <ul class="footer-links">
+          <li>WhatsApp</li>
+          <li>Trocas e devoluções</li>
+          <li>Rastrear pedido</li>
+          <li>Fale conosco</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Michele Medeiros Modas · Todos os direitos reservados</p>
+      <div class="social">
+        <div class="social-btn">📷</div>
+        <div class="social-btn">▶</div>
+        <div class="social-btn">💬</div>
+      </div>
+    </div>
+  </footer>
+<script>
+  function toggleBusca() {
+    const box = document.getElementById('searchBox');
+    const input = document.getElementById('searchInput');
+    box.classList.toggle('aberta');
+    if (box.classList.contains('aberta')) {
+      input.focus();
+    } else {
+      input.value = '';
+      buscar();
+    }
+  }
+
+  function buscar() {
+    const termo = document.getElementById('searchInput').value.toLowerCase().trim();
+    const produtos = document.querySelectorAll('.product');
+    const semResultado = document.getElementById('semResultado');
+    let visiveis = 0;
+
+    produtos.forEach(produto => {
+      const nome = produto.querySelector('.product-name').textContent.toLowerCase();
+      const desc = produto.querySelector('.product-desc').textContent.toLowerCase();
+
+      if (nome.includes(termo) || desc.includes(termo)) {
+        produto.style.display = 'block';
+        visiveis++;
+      } else {
+        produto.style.display = 'none';
+      }
+    });
+
+    semResultado.style.display = visiveis === 0 ? 'block' : 'none';
+  }
+</script>
+</body>
+</html>
